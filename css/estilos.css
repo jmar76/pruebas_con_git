@@ -4,6 +4,15 @@ body{
     color: deeppink;
 }
 h1{
-    background-color: rgba(0, 255, 255, 0.411);
+    background-color: rgba(0, 140, 255, 0.89);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+.contenedor{
+    margin: 0 auto;
+    width: 500px;
+    height: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    box-shadow:  10px 5px rgba(92, 91, 91, 0.082);
+
 }
