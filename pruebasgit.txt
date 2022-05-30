@@ -2,7 +2,7 @@ Bloc de notas
 
 con el que voy a hacer pruebas en GIT
 
-esto es una prueba, una más
+Esto es una prueba, una más
 
 acabo de modificar el archivo en visual studio code
 
