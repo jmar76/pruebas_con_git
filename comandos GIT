@@ -1,0 +1,80 @@
+USAR GIT
+git init --> inicializa git en el proyecto que queramos. Entar en la capreta principal del proyecto e inicializar.
+git config --global user.email "you@example.com", cambiar mail del usuario que trabaja
+git config --global user.name "Your Name", cambiar el nombre del usuario que trabaja
+NOTA: con dos guiones sigue una palabra, con un guión sigue una letra
+git config --list --> muestra un listado de la configuracion de GIT, aquí se puede ver el usuario y el email
+git status --> para ver la situacion del proyecto
+git commit -m "primer commit", es importante haber creado el usuario y el mail, podenmos ver quien es con git config --list
+git dir --> para ver el contenido del proyecto, archivos, carpetas, etc...
+git cat + archivo --> para ver en la consola el contenido del archivo txt (texto plano)
+git code + archivo --> para abrir un archivo o caperta en visual studio code. para ver o modificar archivos en html, etc...
+git log + archivo --> muestra el historial de COMMITS realizados en el archivo.
+git show + archivo --> muestra los cambios efectuados 
+git diff + numero de comit + otro numero de commit --> lo que hace es comparar ambos commits, para saber el numero de commit podemos conseguirlo con el comando git log + archivo
+git diff f28a12cb85b02be2a43cf53affd8eee9ca198c0d 75cea4d8cbfca067c732d89704a4fd2e73d3cc8e
+
+versiones anteriores, con checkout reemplaza las versiones, es una forma de volver atrás y volver a lanzar cambios.
+git log + archivo --> muestra el historial de COMMITS realizados en el archivo. 
+git checkout + numero de commit + archivo --> me trae la version perteneciente al commit indicado, aquí puedo recuperar ese commit y hacer lo quiera con él.
+git checkout + master + archivo --> me trae la ultima version.
+git revert + numero de commit
+
+-----------------------------------------
+Comandos para trabajo remoto con GIT
+
+git clone url_del_servidor_remoto: Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
+git push: Luego de hacer git add y git commit debemos ejecutar este comando para mandar los cambios al servidor remoto.
+git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+git pull: Básicamente, git fetch y git merge al mismo tiempo.
+
+Adicionalmente, tenemos otros comandos que nos sirven para trabajar en proyectos muy grandes:
+
+git log --oneline:Te muestra el id commit y el título del commit.
+git log --decorate: Te muestra donde se encuentra el head point en el log.
+git log --stat: Explica el número de líneas que se cambiaron brevemente.
+git log -p: Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.
+git shortlog: Indica que commits ha realizado un usuario, mostrando el usuario y el título de sus commits.
+git log --graph --oneline --decorate y
+git log --pretty=format:"%cn hizo un commit %h el dia %cd": Muestra mensajes personalizados de los commits.
+git log -3: Limitamos el número de commits.
+git log --after=“2018-1-2”
+git log --after=“today” y
+git log --after=“2018-1-2” --before=“today”: Commits para localizar por fechas.
+git log --author=“Name Author”: Commits hechos por autor que cumplan exactamente con el nombre.
+git log --grep=“INVIE”: Busca los commits que cumplan tal cual está escrito entre las comillas.
+git log --grep=“INVIE” –i: Busca los commits que cumplan sin importar mayúsculas o minúsculas.
+git log – index.html: Busca los commits en un archivo en específico.
+git log -S “Por contenido”: Buscar los commits con el contenido dentro del archivo.
+git log > log.txt: guardar los logs en un archivo txt
+
+------------------------------------------------
+RAMAS
+
+git branch --> para saber en rama estoy y las que existen
+git checkout test
+
+git branch -nombre de la rama-: Con este comando se genera una nueva rama.
+git branch -r --> listar todas las ramas remotas, repositorio remoto.
+git branch -a --> listar todas las ramas remotas y locales.
+git checkout -nombre de la rama-: Con este comando puedes saltar de una rama a otra.
+git checkout -b rama: Genera una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
+git reset id-commit: Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit posteriores al tag seleccionado.
+git checkout rama-o-id-commit: Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
+
+para fusionar "merge" la rama nueva, me situo en la rama master y hago el merge. git merge -nombre de la rama- después de haber hecho las modificaciones y haber commiteado los cambios.
+
+$ git branch -d nombre_rama --> eliminar una rama
+
+-----------------------------------------------
+repositorio en remoto
+
+crear nuevo repositorio en github
+git remote add origin https://github.com/jmar76/pruebas_con_git.git --> apuntar desde bash
+git remote -v --> para comprobar adonde apunta en remoto
+git remote remove origin --> remueve la dirección en remoto que había, se puede comprobar con git remote -v, 
+git pull origin master --> nos descargamos la ultima actualizacion desde el repositorio con el que estamos trabajando.
+git revert + numero commit --> deshacer confirmaciones enviadas
+
+esc + shift + zz
